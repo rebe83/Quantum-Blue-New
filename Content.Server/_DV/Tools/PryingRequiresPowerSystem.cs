@@ -1,6 +1,6 @@
-using Content.Server.Power.Components;
+using Content.Shared.Power.Components;
 using Content.Server.Power.EntitySystems;
-using Content.Server.PowerCell;
+using Content.Shared.PowerCell;
 using Content.Shared.Prying.Components;
 
 namespace Content.Server._DV.Tools;
