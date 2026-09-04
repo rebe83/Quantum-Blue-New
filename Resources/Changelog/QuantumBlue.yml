@@ -1,4 +1,11 @@
 Entries:
+  - author: rebe83
+    changes:
+      - type: Add
+        message: Cloning can now be researched in T3 civilian services.
+    id: 165
+    time: '2026-09-04T00:27:23.0000000+00:00'
+    url: https://github.com/QuantumBlueSS14/Quantum-Blue-New/pull/207
   - author: MattFright
     changes:
       - type: Tweak
