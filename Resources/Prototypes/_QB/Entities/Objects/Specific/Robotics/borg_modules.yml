@@ -99,6 +99,12 @@
     - item: WeaponBorgDisabler
     - item: Flash
     - item: GrenadeFlashBang
+      hand:
+        emptyRepresentative: GrenadeFlashBang
+        emptyLabel: borg-slot-grenade-flashbang-empty
+        whitelist:
+          tags:
+          - GrenadeFlashBang
   - type: BorgModuleIcon
     icon: { sprite: _QB/Interface/Actions/actions_borg.rsi, state: nonlethal-module }
 
@@ -114,7 +120,7 @@
   - type: ItemBorgModule
     hands:
     - item: Truncheon
-    - item: Bola # borg cant throw...
+    - item: Bola # borg cant throw this? make a bola launcher???
     - item: GrenadeStinger
       hand:
         emptyRepresentative: GrenadeStinger
@@ -173,7 +179,13 @@
         emptyLabel: borg-slot-breaching-empty
         whitelist:
           components:
-          - Explosive # whatever works
+          - Sticky # c4, seismic, and breaching charge
     - item: CableDetStack # needs more logic so it can't be a free hand when used up
+      hand:
+        emptyRepresentative: CableDetStack
+        emptyLabel: borg-slot-detonator-cable-empty
+        whitelist:
+          tags:
+          - Payload # the only tag the cable has
   - type: BorgModuleIcon
     icon: { sprite: _QB/Interface/Actions/actions_borg.rsi, state: breaching-module }
