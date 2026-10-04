@@ -5,3 +5,4 @@ borg-slot-forensic-pad-empty = Forensic Pad
 borg-slot-smokable-empty = Smokable
 borg-slot-breaching-empty = Breaching Charge
 borg-slot-detonator-cable-empty = Detonator Cord
+borg-slot-shield-empty = Shield

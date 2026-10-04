@@ -109,7 +109,7 @@
     icon: { sprite: _QB/Interface/Actions/actions_borg.rsi, state: nonlethal-module }
 
 - type: entity
-  id: BorgModuleSecurityLethal # T2 research
+  id: BorgModuleSecurityLethal # T2 research. Would like it to have bola but it seems to be unable to throw
   parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
   name: lethal cyborg module
   components:
@@ -120,7 +120,13 @@
   - type: ItemBorgModule
     hands:
     - item: Truncheon
-    - item: Bola # borg cant throw this? make a bola launcher???
+    - item: RiotShield 
+      hand:
+        emptyRepresentative: RiotShield
+        emptyLabel: borg-slot-shield-empty
+        whitelist:
+          components:
+          - Blocking # any shield
     - item: GrenadeStinger
       hand:
         emptyRepresentative: GrenadeStinger
