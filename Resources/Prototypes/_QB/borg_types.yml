@@ -28,7 +28,7 @@
   - type: ShowCriminalRecordIcons
 
   # Visual
-  inventoryTemplateId: borgShort
+  inventoryTemplateId: borgSec
   spriteBodyState: peace
   spriteHasMindState: peace_e
   spriteNoMindState: peace_e_r

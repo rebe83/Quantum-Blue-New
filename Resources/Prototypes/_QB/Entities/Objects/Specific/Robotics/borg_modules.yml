@@ -162,7 +162,7 @@
         emptyRepresentative: Cigar
         emptyLabel: borg-slot-smokable-empty
         whitelist:
-          tags:
+          components:
           - Smokable
   - type: BorgModuleIcon
     icon: { sprite: _QB/Interface/Actions/actions_borg.rsi, state: investigation-module }

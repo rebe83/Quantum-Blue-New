@@ -183,6 +183,6 @@
     displayName: Mask
     offset: 0.02, -0.125
     whitelist: # yes its just for smoking
-      tags:
+      components:
         - Smokable
 # qb end
