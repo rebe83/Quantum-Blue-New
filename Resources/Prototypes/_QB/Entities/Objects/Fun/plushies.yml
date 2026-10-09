@@ -19,18 +19,31 @@
   - type: EmitSoundOnCollide
     sound: *PlushieValidSound
   - type: Edible
-    sound:
+    useSound:
       path: /Audio/Voice/Human/malescream_1.ogg
       params:
         volume: -8
   - type: MeleeWeapon # imitate GOTNS
     wideAnimationRotation: -135
-    attackRate: 1
+    autoAttack: true
+    attackRate: 4
     damage:
       types:
-        Blunt: 2
+        Blunt: 1
     soundHit:
       collection: Punch
   - type: FoodSequenceElement
     entries:
       CottonBurger: ValidPlushie
+  - type: FlavorProfile
+    flavors:
+      - validhunting
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 9
+        - ReagentId: Stimulants
+          Quantity: 1
