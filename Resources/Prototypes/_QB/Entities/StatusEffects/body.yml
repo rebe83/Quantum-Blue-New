@@ -1,0 +1,29 @@
+- type: entity
+  parent: BloodstreamStatusEffectBase
+  id: StatusEffectSailorsFury
+  name: Sailor's Fury
+  components:
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    autoAttack: true
+    attackRate: 4
+    damage:
+      types:
+        Blunt: 15
+        Structural: 5
+    soundHit:
+      collection: ExplosionSmall
+  - type: StaminaDamageOnHit
+    damage: 10
+  - type: MeleeThrowOnHit
+    speed: 10
+    distance: 5 # just a step
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Metallic
+  - type: AmbientSound # whimsylogic
+    enabled: true
+    volume: -3
+    range: 8
+    sound:
+      path: /Audio/_QB/Ambience/Antag/hornpipe.ogg

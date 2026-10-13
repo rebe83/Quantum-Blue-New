@@ -10,3 +10,68 @@
       effects:
       - !type:SatiateHunger
   pricePerUnit: 30
+
+- type: reagent
+  id: SailorsGreens # essentially, vitamins + iron + weaker hyperzine, plus an innate blunt melee weapon
+  name: reagent-name-sailors-greens
+  desc: reagent-desc-sailors-greens
+  physicalDesc: reagent-physical-desc-spinach
+  flavor: metallic
+  color: "#235515"
+  metabolisms:
+    Food:
+      metabolismRate: 0.3 # a can last for a minute
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Kodepiia ]
+          inverted: true
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -1
+            Burn: -1
+      # Helps you stop bleeding to an extent.
+      - !type:ModifyBleed
+        amount: -1
+    Narcotic: # generally 1/2 - 1/3 as effective as hyperzine
+      metabolismRate: 0.3 # a can last for a minute
+      effects:
+      - !type:MovementSpeedModifier # 0.1 slower than hyperzine
+        walkSpeedModifier: 1.20
+        sprintSpeedModifier: 1.20
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: ChloralHydrate
+          min: 1
+        reagent: ChloralHydrate
+        amount: -5
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSailorsFury
+        time: 2 # 60 seconds per can
+        type: Add
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
+        time: 1
+        type: Remove
+      - !type:ModifyKnockdown
+        time: 1
+        type: Remove
+      - !type:GenericStatusEffect
+        key: StaminaModifier
+        component: StaminaModifier
+        time: 1
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
+        time: 1
+        type: Remove
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: Haloperidol
+          max: 0.01
+        effectProto: StatusEffectDrowsiness
+        time: 5
+        type: Remove

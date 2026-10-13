@@ -1,0 +1,38 @@
+# Sailor's greens
+- type: entity
+  parent: FoodTinBase
+  id: FoodTinSailorsGreens
+  name: Sailor's Greens
+  description: For those who prefer to fight to the finish.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: SailorsGreens # Vitamins + iron + hyperzine + whimsy
+          Quantity: 20
+  - type: Item
+    storedOffset: 0,-3
+  - type: Sprite
+    sprite: _QB/Objects/Consumable/Food/Tins/spinach.rsi
+  - type: FlavorProfile
+    flavors:
+    - metallic # high in iron
+    - funny
+  - type: Edible
+    trash:
+    - FoodTinSailorsGreensTrash
+  - type: Tag
+    tags:
+    - Vegetable
+
+- type: entity
+  parent: FoodTinBaseTrash
+  id: FoodTinSailorsGreensTrash
+  name: Sailor's Greens
+  components:
+  - type: Item
+    storedOffset: 0,-3
+  - type: Sprite
+    sprite: _QB/Objects/Consumable/Food/Tins/spinach.rsi
