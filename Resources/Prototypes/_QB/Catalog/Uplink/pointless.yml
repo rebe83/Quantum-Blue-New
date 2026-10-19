@@ -1,0 +1,10 @@
+# Cereal boxes
+- type: listing
+  id: UplinkCerealBox
+  name: uplink-snack-box-name
+  description: uplink-snack-box-desc
+  productEntity: HappyHonkSyndieCrunch
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkPointless

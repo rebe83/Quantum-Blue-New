@@ -1,0 +1,41 @@
+
+- type: entity
+  parent: HappyHonkNukie
+  id: HappyHonkSyndieCrunch
+  suffix: Toy Unsafe, Snacks
+  name: syndicate cereal box
+  description: A mystery box of syndicate cereal, includes one free toy!
+  components:
+  - type: Storage
+    grid:
+    - 0,0,2,2
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        # toy
+        - !type:NestedSelector
+          tableId: SyndieCrunchToyEntityTable
+        # cereal
+        - !type:NestedSelector
+          tableId: SyndieCrunchCerealEntityTable
+
+- type: entityTable # size: 2x2
+  id: SyndieCrunchToyEntityTable
+  table: !type:GroupSelector
+    children:
+    - id: MobMouseCancer
+      prob: 0.1
+    - id: SnapPopClusterGrenade
+    - id: ToyNuke
+    - id: SyndicatePersonalAISpoon
+    - id: SyndicateLaserPointer
+    - id: PartRodMetalSyndicate
+
+
+- type: entityTable # size: 2x2
+  id: SyndieCrunchCerealEntityTable
+  table: !type:GroupSelector
+    children:
+    - id: ReagentContainerFlour
+      prob: 0.1

@@ -1,0 +1,71 @@
+# Syndicate Cereal toys
+- type: entity
+  parent: SyndieTrickyBomb
+  id: SnapPopClusterGrenade
+  name: snap pop clusterbomb
+  description: Throw it at the HOS and listen to it POP POP POP!
+  components:
+  - type: ScatteringGrenade
+    fillPrototype: SnapPop
+    distance: 4
+
+- type: entity
+  parent: [SpoonPlastic, SyndicatePersonalAI]
+  id: SyndicatePersonalAISpoon
+  name: syndicate personal ai spoon
+  description: Your Syndicate pal who's fun to eat with!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/pai.rsi
+    layers:
+    - state: spoon-base
+    - state: spoon-off-overlay
+      shader: unshaded
+      map: ["screen"]
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableGhostRoleVisuals.Status:
+        screen:
+          Off: { state: spoon-off-overlay }
+          Searching: { state: spoon-searching-overlay }
+          On: { state: spoon-on-overlay }
+
+- type: entity
+  parent: BaseLaserPistol
+  id: SyndicateLaserPointer
+  name: Gorlex laser pointer
+  description: Mark your targets and plan your next strike with this laser pointer.
+  components:
+#  - type: Sprite
+#    sprite: _Impstation/Objects/Tools/flashlight.rsi # placeholder
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,1,0
+  - type: MeleeWeapon
+    range: 0.8
+    attackRate: 0.8
+    damage:
+      types:
+        Blunt: 1
+  - type: BatteryAmmoProvider
+    proto: RedLaserPractice
+    fireCost: 100
+
+- type: entity
+  parent: PartRodMetal1
+  id: PartRodMetalSyndicate
+  name: Movable Rod
+  description: Build your own base of operations or impale your foes with this secret technology.
+  components:
+  - type: Item
+    size: Small # needs to be small for fitting in the box
+    heldPrefix: rods
+  - type: MeleeWeapon # like baguette blade I guess
+    attackRate: 1.4
+    wideAnimationRotation: -120
+    damage:
+      types:
+        Slash: 1
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
