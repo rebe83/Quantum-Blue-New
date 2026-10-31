@@ -1,0 +1,23 @@
+- type: entity
+  name: bluespace mail bag
+  id: MailBagBluespace
+  parent: BaseStorageItem
+  description: A bag for carrying mail around the station. Made from tanned space bear hide and bluespace.
+  components:
+  - type: Sprite
+    sprite: /_QB/Objects/Specific/Cargo/mail_bag_holding.rsi
+    state: icon
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,12,9
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      components:
+      - Paper
+      - Delivery
+      - Envelope # DeltaV - Allow handwritten mail
+      tags:
+      - Document
+      - Paper

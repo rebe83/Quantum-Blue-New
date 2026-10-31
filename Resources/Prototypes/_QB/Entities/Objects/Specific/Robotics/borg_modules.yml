@@ -240,3 +240,38 @@
     - item: RemoteSignaller
   - type: BorgModuleIcon
     icon: { sprite: _QB/Interface/Actions/actions_borg.rsi, state: breaching-module }
+
+# Cargo modules
+
+- type: entity
+  id: BorgModuleCourierAdvanced
+  parent: [ BaseBorgModuleCargo, BaseProviderBorgModule ]
+  name: advanced courier cyborg module
+  components:
+  - type: Sprite
+    sprite: _Impstation/Objects/Specific/Robotics/borgmodules.rsi
+    layers:
+    - state: cargo
+    - state: icon-courier
+  - type: ItemBorgModule
+    hands:
+    - item: MailBagBluespace
+    - item: BorgHoloBellProjector
+    - hand:
+        emptyLabel: borg-slot-mail-empty
+        emptyRepresentative: Paper
+        whitelist:
+          components:
+          - Delivery
+          tags:
+          - Document
+          - Paper
+    - item:  WeaponMailLakeCyborg
+    - hand:
+        emptyLabel: borg-slot-mail-capsule-empty
+        emptyRepresentative: MailCapsulePrimed
+        whitelist:
+          tags:
+          - MailCapsule
+  - type: BorgModuleIcon
+    icon: { sprite: _Impstation/Interface/Actions/actions_borg.rsi, state: courier-module }
